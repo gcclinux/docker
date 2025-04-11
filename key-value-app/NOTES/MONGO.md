@@ -61,6 +61,6 @@ test>
 
 **Connect to alternative mongodb in the same network**
 ```sh
-# docker run --rm on shutdown --name --it (interactive) --network (name) (docker image) mongosh (command) USER:PASSWORD@URL/Database
+# docker run --rm on shutdown --name --it (interactive) --network (name) (docker image) mongosh (command) USER:PASSWORD@URL/Database.
 docker run --rm --name debugsh -it --network key-value-net mongodb/mongodb-community-server:7.0-ubuntu2204 mongosh mongodb://key-value-user:key-value-password@mongodb/key-value-db
 ```
