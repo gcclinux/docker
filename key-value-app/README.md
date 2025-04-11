@@ -33,4 +33,6 @@ This [README.md](http://_vscodecontentref_/2) provides an overview of the projec
 Run the following command to start the MongoDB container:
 
 ```bash
-[start-db.sh](http://_vscodecontentref_/1)
+start-db.sh
+start-backend.sh
+```
