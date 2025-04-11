@@ -31,6 +31,7 @@ docker run --rm -d \
     -e KEY_VALUE_DB=$KEY_VALUE_DB \
     -e KEY_VALUE_USER=$KEY_VALUE_USER \
     -e KEY_VALUE_PASSWORD=$KEY_VALUE_PASSWORD \
+    -v ./backend/src:/app/src \
     --network $NETWORK_NAME \
     $BACKEND_IMAGE_NAME
 

@@ -2,15 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
+const { healthRouter } = require('./routes/health');
+const { keyValueRouter } = require('./routes/store');
+
 const port = process.env.PORT || 3000;
 
 const app = express();
+
 app.use(bodyParser.json());
-app.get('/health', (req, res) => {
-    res.status(200).json({ 
-        status: 'UP'
-    });
-});
+app.use('/health', healthRouter);
+app.use('/store', keyValueRouter);
+
 
 console.log('Connecting to MongoDB...');
 // Connect to MongoDB
