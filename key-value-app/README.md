@@ -30,7 +30,7 @@ This [README.md](http://_vscodecontentref_/2) provides an overview of the projec
 ## How to Run
 
 ### 1. Start MongoDB with Docker
-Run the following command to start the MongoDB container:
+Run the following command to start the MongoDB container:.
 
 ```bash
 start-db.sh
