@@ -23,7 +23,7 @@ docker run -d --name backend --network key-value-net -p3000:3000 key-value-backe
 
 **Check running images & containers**
 ```sh
-docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Size}}\t{{.Ports}}"
+docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Size}}\t{{.Ports}}"
 CONTAINER ID   NAMES       STATUS          SIZE                   PORTS
 88897a6643ec   backend     Up 3 minutes    528B (virtual 176MB)   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp
 c8fdf356fa6c   mongodb     Up 20 minutes   0B (virtual 1.23GB)    0.0.0.0:27017->27017/tcp, :::27017->27017/tcp
