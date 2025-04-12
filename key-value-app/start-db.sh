@@ -26,7 +26,7 @@ if [ "$(docker ps -q -f name=$DB_CONTAINER_NAME)" ]; then
     exit 1
 fi
 
-docker run --rm -d \
+docker run -d \
     --name $DB_CONTAINER_NAME \
     -p $LOCALHOST_PORT:$CONTAINER_PORT \
     -e MONGODB_INITDB_ROOT_USERNAME=$ROOT_USER \
@@ -35,7 +35,7 @@ docker run --rm -d \
     -e KEY_VALUE_USER=$KEY_VALUE_USER \
     -e KEY_VALUE_PASSWORD=$KEY_VALUE_PASSWORD \
     -v $VOLUME_NAME:$VOLUME_CONTAINER_PATH \
-    -v /home/ricardo/Learning/key-value-app/db-config/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro \
+    -v ./db-config/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro \
     --network $NETWORK_NAME \
     $MONGODB_IMAGE:$MONGODB_TAG
 
