@@ -26,7 +26,7 @@ if [ "$(docker ps -q -f name=$DB_CONTAINER_NAME)" ]; then
     exit 1
 fi
 
-docker run -d \
+docker run --rm -d \
     --name $DB_CONTAINER_NAME \
     -p $LOCALHOST_PORT:$CONTAINER_PORT \
     -e MONGODB_INITDB_ROOT_USERNAME=$ROOT_USER \
