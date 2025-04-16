@@ -10,6 +10,11 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(bodyParser.json());
+app.get('/', (req, res) => {
+  return res.json({ 
+    message: 'Welcome to the Key-Value Store API',
+   });
+});
 app.use('/health', healthRouter);
 app.use('/store', keyValueRouter);
 
