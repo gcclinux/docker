@@ -8,7 +8,9 @@ app.get('/', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Notebooks Server is running on port 3000');
+const port = process.env.PORT ;
+
+app.listen(port, () => {
+    console.log('Notebooks Server is running on port', port);
     }
 );
