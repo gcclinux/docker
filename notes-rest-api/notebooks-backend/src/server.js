@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -9,8 +10,15 @@ app.get('/', (req, res) => {
 });
 
 const port = process.env.PORT ;
-
-app.listen(port, () => {
-    console.log('Notebooks Server is running on port', port);
-    }
-);
+mongoose.connect(process.env.DB_URL)
+.then(() => {
+    console.log('MongoDB connected');
+    
+    app.listen(port, () => {
+        console.log('Notebooks Server is running on port', port);
+        }
+    );
+})
+.catch(err => {
+    console.error('MongoDB connection error:', err);
+});
